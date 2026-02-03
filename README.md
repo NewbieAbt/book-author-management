@@ -34,8 +34,8 @@ Make sure your system has:
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-repo/authors-books-api.git
-cd authors-books-api
+git clone https://github.com/NewbieAbt/book-author-management.git
+cd book-author-management
 ```
 
 ---
@@ -63,7 +63,10 @@ cp .env.example .env
 Update your `.env` file with database credentials:
 
 ```env
-DB_DATABASE=authors_books_db
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=book_author_management
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -83,26 +86,6 @@ php artisan key:generate
 ```bash
 php artisan migrate
 ```
-
-(Optional) Seed sample data:
-
-```bash
-php artisan db:seed
-```
-
----
-
-### 7️⃣ Install Sanctum
-
-If Sanctum is not installed yet:
-
-```bash
-composer require laravel/sanctum
-php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
-php artisan migrate
-```
-
----
 
 ### 8️⃣ Start the Server
 
@@ -220,7 +203,8 @@ GET /api/authors/1
 
 ```json
 {
-    "name": "Updated Author Name"
+    "name": "Updated Author Name",
+    "bio": "Updated Author bio"
 }
 ```
 
@@ -356,15 +340,6 @@ Example validation error:
 
 ---
 
-# 🧪 Running Tests (Optional)
-
-Run Laravel Feature Tests:
-
-```bash
-php artisan test
-```
-
----
 
 # 📌 Notes
 
@@ -374,15 +349,3 @@ php artisan test
 
 ---
 
-# 🎯 Future Improvements
-
-- Add Pagination
-- Add Search & Filtering
-- Add API Resource Formatting
-- Add Policies for Authorization
-
----
-
-## 👨‍💻 Author
-
-Built by **Abhishek Tiwari** 🚀
