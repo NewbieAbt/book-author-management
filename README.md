@@ -103,7 +103,7 @@ http://127.0.0.1:8000
 
 # 🔐 Authentication Endpoints
 
-All protected routes require this header:
+All protected routes(authors and books) require this header:
 
 ```
 Authorization: Bearer YOUR_TOKEN
